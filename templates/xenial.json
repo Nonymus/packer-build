@@ -43,7 +43,13 @@
 	  "ssh_timeout": "30m",
 	  "output_directory": "build/{{isotime \"2006-01-02 03-04\"}}/{{user `vm_name`}}/",
       "shutdown_command": "echo '{{user `ssh_password`}}' | sudo -E -S poweroff",
-	  "vm_name": "{{user `vm_name`}}"
+	  "vm_name": "{{user `vm_name`}}",
+	  "remote_type": "{{ user `vmware_type`}}",
+	  "remote_username": "{{user `esx_user`}}",
+	  "remote_password": "{{user `esx_password`}}",
+	  "remote_host": "{{user `esx_host`}}",
+	  "remote_datastore": "{{user `esx_datastore`}}"
+	  
 	}
   ],
   "description": "{{user `description`}}",
@@ -123,7 +129,12 @@
     "ssh_password": "ubuntu",
     "ssh_username": "ubuntu",
     "version": "0.0.2",
-    "vm_name": "base-xenial"
+    "vm_name": "base-xenial",
+	"vmware_type": "",
+    "esx_user": "root",
+    "esx_password": "p0wnM3",
+	"esx_host": "virtual-esxi",
+	"esx_datastore": "datastore1"
   }
 }
 
